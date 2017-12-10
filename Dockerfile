@@ -4,6 +4,9 @@ ADD requirements.txt /tmp/requirments.txt
 RUN pip install -r /tmp/requirments.txt
 
 RUN mkdir -p /usr/src/hello_world_printer/
+ADD hello_world/ /usr/src/hello_world_printer/hello_world/
+
+ADD main.py /usr/src/hello_world_printer/
 RUN ls /usr/src/hello_world_printer
 
 CMD PYTHONPATH=$PYTHONPATH:/usr/src/hello_world_printer \
