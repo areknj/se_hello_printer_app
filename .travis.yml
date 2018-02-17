@@ -13,3 +13,8 @@ script:
 after_success:
   - make docker_build
   - make docker_push
+
+deploy:
+  provider: heroku
+  app:arcane-cliffs-46697
+  api_key: ${HEROKU_API_KEY}
